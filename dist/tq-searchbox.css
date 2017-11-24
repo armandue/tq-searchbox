@@ -1,0 +1,20 @@
+#tqSearchBox {
+	margin: 3rem 0;
+}
+
+#tqSearchBoxBorder {
+	border: 1px #AE2F2A solid;
+	border-radius: 4px;
+}
+
+#tqSearchBoxInput {
+	border: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.ng-hide.ng-hide-animate {
+     display: none !important;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "tq-searchbox",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dnauck/tq-searchbox",
+  "authors": [
+    "tq"
+  ],
+  "description": "A directive for AngularJS providing a search box",
+  "main": [
+    "dist/tq-searchbox.css",
+    "dist/tq-tpls.js"
+  ],
+  "keywords": [
+    "search",
+    "angular",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "Gruntfile.js",
+    "package.json",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+        "angular": "~1.6.0",
+        "jquery": "2",
+        "bootstrap": "3",
+        "angular-bootstrap": "1"
+    }
+}
