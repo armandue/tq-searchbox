@@ -2,7 +2,9 @@ angular
 	.module('tqSearchbox', [])
 	.controller('TqSearchBoxController', TqSearchBoxController)
 	.component('searchBoxCmp', {
-		templateUrl: 'dist/tq-searchbox.html',
+		templateUrl:  function(element, attr) {
+            return attr.templateUrl || 'tq-searchbox.html';
+        },
 		controller: 'TqSearchBoxController',
 		bindings: {
 			placeholder: '@',
@@ -160,3 +162,11 @@ function findFromArray (item, array) {
 		return -1;
 	}
 }
+
+
+angular.module('tqSearchbox').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('tq-searchbox.html',
+  	'<div id="tqSearchBox"> <div id="tqSearchBoxBorder"> <div style="display: flex; height: 38px"> <div class="input-group input-group-sm" ng-repeat="parameter in $ctrl.output.parameters" style="display: flex; padding-top: 5px; padding-left: 5px"> <span class="input-group-addon" style="width: auto; border-right: none;">{{parameter.name}}:</span> <span class="input-group-addon hand-pointer" ng-show="!$ctrl.ifFocused(parameter) && parameter.value" style="width: auto; border-left: none; border-right: none; padding: 5px 0; font-weight: 600" ng-click="$ctrl.restoreSearch(parameter)">{{parameter.value}}</span> <input type="text" style="font-weight: 600; width: 200px" ng-show="$ctrl.ifFocused(parameter)" class="form-control" ng-model="parameter.value" ng-attr-id="{{parameter.key}}" typeahead-min-length="0" typeahead-select-on-blur="true" ng-blur="$ctrl.checkInputValue(parameter)" ng-keydown="$ctrl.keydownOnParameter($event, parameter)" uib-typeahead="value as value for value in $ctrl.getSuggestions(parameter, $viewValue)"> <span class="input-group-addon" style="width: auto; border-left: none; font-size: 1.3rem"><i class="glyphicon glyphicon-trash pointer" ng-click="$ctrl.removeParameter(parameter)"></i></span></div><input type="text" style="padding-top: 10px; padding-left: 15px" placeholder="{{$ctrl.placeholder}}"ng-model="$ctrl.output.query"uib-typeahead="parameter as parameter.name for parameter in $ctrl.innerParameters | filter:$viewValue | orderBy: '-name' : true"typeahead-on-select="$ctrl.selectSearchItem($item, $model, $label, $event)"class="form-control"typeahead-min-length="0"typeahead-focus-on-select="false"id="tqSearchBoxInput"><span style="padding-top: 10px; padding-right: 15px; color: #AE2F2A; font-weight: 600"><i class="glyphicon glyphicon-trash pointer" ng-click="$ctrl.removeAllParameters()"></i></span> </div></div></div>');
+}]);
