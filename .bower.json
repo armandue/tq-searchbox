@@ -8,7 +8,7 @@
   "description": "A directive for AngularJS providing a advanced visual search box",
   "main": [
     "dist/tq-searchbox.css",
-    "dist/tq-tpls.js"
+    "dist/tq-searchbox.js"
   ],
   "keywords": [
     "search",
