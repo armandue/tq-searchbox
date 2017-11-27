@@ -19,7 +19,7 @@ angular
 		}
 	});
 
-function TqSearchBoxController($window, $timeout, $filter, $scope) {
+function TqSearchBoxController($window, $timeout, $filter) {
 	var vm = this;
 	var oldOutput;
 	var focusedKey;
