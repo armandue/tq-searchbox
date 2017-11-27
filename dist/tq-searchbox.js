@@ -2,8 +2,8 @@ angular
 	.module('tqSearchbox', [])
 	.controller('TqSearchBoxController', TqSearchBoxController)
 	.component('searchBoxCmp', {
-		templateUrl:  function(element, attr) {
-            return attr.templateUrl || 'tq-searchbox.html';
+		templateUrl:  function() {
+            return 'tq-searchbox.html';
         },
 		controller: 'TqSearchBoxController',
 		bindings: {
