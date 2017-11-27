@@ -71,10 +71,6 @@
 	cursor: pointer;
 }
 
-#tqSearchBoxFieldMid.ng-hide.ng-hide-animate {
-     display: none !important;
-}
-
-#tqSearchBoxInputMid.ng-hide.ng-hide-animate {
+.form-control.ng-hide.ng-hide-animate {
      display: none !important;
 }
