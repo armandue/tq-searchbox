@@ -2,7 +2,7 @@ angular
 	.module('tqSearchbox', [])
 	.controller('TqSearchBoxController', TqSearchBoxController)
 	.component('searchBoxCmp', {
-		templateUrl: './tq-searchbox.html',
+		templateUrl: 'dist/tq-searchbox.html',
 		controller: 'TqSearchBoxController',
 		bindings: {
 			placeholder: '@',
